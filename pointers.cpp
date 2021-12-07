@@ -34,19 +34,18 @@ int main()
 
     //pointers and ARRAY (wtf one was enough)
 
-    int arr[] = {10,11,12,13,14};
+    int arr[5] = {10,11,12,13,14};
 
-    int *ptr = arr; 
+    int *ptr = arr;
 
-    cout<<&arr<<endl;
-
+    for (int i = 0; i < 5; i++)
+    {
+        cout<<*(arr+i) <<endl;
+        /* code */
+    }
 
     
-
-
-
-
-
-
+    
+    
     return 0;
 }
