@@ -17,12 +17,13 @@ int main()
     cout<<&a<<endl;
     cout<<aptr<<endl;
     cout<<*aptr<<endl; // derefrencing
+    
 
     *aptr=20;
 
     cout<<"channged value"<<endl;
 
-    cout<<a<<endl;
+    cout<<a<<endl; 
     cout<<&a<<endl;
     cout<<*aptr<<endl; // derefrencing
     cout<<aptr<<endl;
@@ -44,7 +45,6 @@ int main()
         /* code */
     }
 
-    
     
     
     return 0;
