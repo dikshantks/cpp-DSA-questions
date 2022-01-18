@@ -24,7 +24,7 @@ int main()
 
    //PALINDROM 
 /*
-   int n;
+ int n;
    cout<<"number of letter: ";
    cin>>n;
 

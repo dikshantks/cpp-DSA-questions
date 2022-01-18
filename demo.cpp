@@ -14,7 +14,7 @@ int main()
     {
         cout<<"friends"<<endl;
     }
-    cout<< saving;
+    cout<< saving<<endl;
     return 0;
 }  
 
