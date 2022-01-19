@@ -10,7 +10,6 @@ int main()
 
     string str1(5, 'n'); // you want n five times
 
-
     string str2 = "dikshant sharma";
 
     cout << str1 << endl;
@@ -72,8 +71,15 @@ int main()
 
     string ints = "177013";
 
+    //string to int
+
     int x = stoi(ints);
 
     cout << x + 1 << endl;
+
+    int z = 34;
+
+    cout << to_string(z) + "append this " << endl;
+
     return 0;
 }
