@@ -1,6 +1,28 @@
 #include <iostream>
 using namespace std;
 
+string palindrome(int n, char arr[n])
+{
+    bool check = 1;
+    string ans;
+    for (int i = 0; i <= n; i++)
+    {
+        if (arr[i] != arr[n - 1 - i])
+        {
+            check = 0;
+            break;
+        }
+    }
+
+    if (check == true)
+        ans = " string is  a palindrome";
+    else
+    {
+        ans = " word is not palindrom";
+    }
+    return ans;
+}
+
 int main()
 {
     /*
@@ -14,7 +36,7 @@ int main()
         i++;
     }
 */
-    //input out put
+    // input out put
     /*
     char arr[100];
     cout<<"enter name: ";
@@ -22,85 +44,68 @@ int main()
     cout<<arr<<endl;
    */
 
-    //PALINDROM
-    /*
- int n;
-   cout<<"number of letter: ";
-   cin>>n;
-
-   char ary[n+1];
-   cout<<"enter word: ";
-   cin>>ary;
-   cout<<ary<<endl; // why this heppening 
-
-   bool check = 1;
-
-   for (int i = 0; i <= n; i++)
-   {
-       if (ary[i]!=ary[n-1-i])
-       {
-           check=0;
-           break;
-       }  
-   }
-
-   if (check == true)
-       cout<<"word is palindrom"<<endl;
-   else
-   {
-       cout<<"word is not palindrom"<<endl;
-   }*/
-
-    //LARGEST WORD IN SENTENCE
+    // PALINDROM
 
     int n;
-    char arr[n + 1];
-    int max = 0, current = 0;
-    int st = 0, maxst = 0;
-
-    cout << "enter 10 (this  includes space and end char '/0') : ";
+    cout << "number of letter: ";
     cin >> n;
-    cin.ignore();
 
-    cout << "enter sentence : ";
+    char ary[n + 1];
+    cout << "enter word: ";
+    cin >> ary;
+    cout << endl
+         << palindrome(n, ary[n + 1]);
 
-    cin.getline(arr, n);
-    cin.ignore();
+    // LARGEST WORD IN SENTENCE
 
-    int i = 0;
+    /* int n;
+     char arr[n + 1];
+     int max = 0, current = 0;
+     int st = 0, maxst = 0;
 
-    while (true)
-    {
-        if (arr[i] == ' ' || arr[i] == '\0')
-        {
-            if (current > max)
-            {
-                max = current;
-                maxst = st;
-            }
-            current = 0;
-            st = i + 1;
-        }
-        else
-        {
-            current++;
-        }
+     cout << "enter 10 (this  includes space and end char '/0') : ";
+     cin >> n;
+     cin.ignore();
 
-        if (arr[i] == '\0')
-        {
-            break;
-        }
-        i++;
-        for (int j = 0; j <= st; j++)
-        {
-            cout << arr[i + maxst];
-        }
-    }
-    cout << st << endl;
-    cout << maxst << endl;
+     cout << "enter sentence : ";
 
-    cout << arr << endl;
-    cout << max;
+     cin.getline(arr, n);
+     cin.ignore();
+
+     int i = 0;
+
+     while (true)
+     {
+         if (arr[i] == ' ' || arr[i] == '\0')
+         {
+             if (current > max)
+             {
+                 max = current;
+                 maxst = st;
+             }
+             current = 0;
+             st = i + 1;
+         }
+         else
+         {
+             current++;
+         }
+
+         if (arr[i] == '\0')
+         {
+             break;
+         }
+         i++;
+         for (int j = 0; j <= st; j++)
+         {
+             cout << arr[i + maxst];
+         }
+     }
+     cout << st << endl;
+     cout << maxst << endl;
+
+     cout << arr << endl;
+     cout << max;*/
 
     return 0;
 }

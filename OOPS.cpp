@@ -1,4 +1,5 @@
 #include <iostream>
+#include <test.h>
 using namespace std;
 
 class student
@@ -63,8 +64,8 @@ public:
 
 class encapsulation
 {
-    //public private , protectoed
-    //good coding practise , inc security of data
+    // public private , protectoed
+    // good coding practise , inc security of data
 public:
     int a;
     void funca()
@@ -228,7 +229,7 @@ int main()
 
     student copyconst(pparameter); // or student copycont = paramet ;
 
-    if (copyconst == pparameter) //OPERATOR OVER LOADING
+    if (copyconst == pparameter) // OPERATOR OVER LOADING
     {
         cout << "SAME \n******\n";
     }
@@ -237,17 +238,17 @@ int main()
         cout << "not SAME \n";
     }
 
-    //encapsulation
+    // encapsulation
 
     encapsulation one;
 
     one.funca();
 
-    //inhertance
+    // inhertance
 
-    //B inher;
+    // B inher;
 
-    //inher.func();
+    // inher.func();
 
     C MultiInhert;
 
