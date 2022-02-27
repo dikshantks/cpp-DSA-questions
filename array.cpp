@@ -4,20 +4,18 @@ using namespace std;
 
 class onedarray
 {
+private:
+    int n;
+
 public:
-    onedarray(int *n)
+    onedarray() {}
+    onedarray(int n)
     {
-
-        int *m = n;
+        this->n = n;
     }
-
-    void inpout(int m) {}
-};
-
-void onedarray::inpout(int m)
-{
-
-    int arr[m];
+    int setit(int m)
+    {
+    }
 };
 
 int main()
@@ -261,12 +259,6 @@ int main()
     //         }
 
     //     }*/
-
-    int *n;
-    cout << " enter n ";
-    cin >> *n;
-
-    onedarray one(n);
 
     return 0;
 }
