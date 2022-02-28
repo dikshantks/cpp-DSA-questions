@@ -1,4 +1,2 @@
-# c-
-(practice codes)
-
-DSA question on c++
+# c++ practise
+Questions and DSA topics 
