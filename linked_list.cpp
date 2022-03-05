@@ -41,7 +41,7 @@ void display(node *head)
         cout << head->data << "->";
         head = head->nextptr;
     }
-    cout << endl;
+    cout << "NULL" << endl;
 }
 void delete_athead(node *&head)
 {
@@ -74,6 +74,106 @@ void deletion(node *&head, int val)
     delete to_delet;
 }
 
+node *reverse(node *&head)
+{
+
+    node *prevptr = NULL;
+    node *currentptr = head;
+    node *nextptr;
+
+    while (currentptr != NULL)
+    {
+        nextptr = currentptr->nextptr;
+
+        currentptr->nextptr = prevptr;
+
+        prevptr = currentptr;
+        currentptr = nextptr;
+    }
+
+    return prevptr;
+}
+
+node *REC_reverse(node *&head)
+{
+    if (head->nextptr == NULL || head == NULL)
+    {
+        return head;
+    }
+
+    node *newhead = REC_reverse(head->nextptr);
+    head->nextptr->nextptr = head;
+    head->nextptr = NULL;
+    return newhead;
+}
+
+node *reverse_Knode(node *&head, int k)
+{
+
+    node *prevptr = NULL;
+    node *currentptr = head;
+    node *nextptr;
+    int counter = 0;
+
+    while (currentptr != 0 && counter < k)
+    {
+        nextptr = currentptr->nextptr;
+        currentptr->nextptr = prevptr;
+        prevptr = currentptr;
+        currentptr = nextptr;
+        counter++;
+    }
+    if (nextptr != NULL)
+    {
+        head->nextptr = reverse_Knode(nextptr, k);
+    }
+
+    return prevptr;
+}
+
+void make_cylce(node *&head, int n)
+{
+
+    node *temp = head;
+    node *startnode;
+
+    int count = 1;
+    while (temp->nextptr != NULL)
+    {
+        if (count == n)
+        {
+            startnode = temp;
+        }
+        temp = temp->nextptr;
+        count++;
+    }
+
+    temp->nextptr = startnode;
+}
+
+bool floyd_detect(node *&head)
+{
+
+    node *slowptr = head;
+    node *fastptr = head;
+
+    bool is_cycle = false;
+
+    while (fastptr != NULL)
+    {
+        slowptr = slowptr->nextptr;
+        fastptr = fastptr->nextptr->nextptr;
+        if (fastptr == slowptr)
+        {
+            is_cycle = true;
+            return is_cycle;
+        }
+        is_cycle = false;
+    }
+
+    return is_cycle;
+}
+
 int main()
 {
 
@@ -88,8 +188,14 @@ int main()
     deletion(head, 3);
     display(head);
 
-    delete_athead(head);
+    insert_attail(head, 5);
+    insert_attail(head, 7);
+    insert_attail(head, 4);
     display(head);
+
+    make_cylce(head, 3);
+
+    cout << floyd_detect(head);
 
     return 0;
 }
