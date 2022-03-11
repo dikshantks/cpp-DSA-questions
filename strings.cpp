@@ -17,7 +17,7 @@ int main()
     // cin >> str;
     // cout<<"hi ,"<<str;
 
-    getline(cin, str); //to input whole line with the space
+    getline(cin, str); // to input whole line with the space
     cout << "sentence: " << str << endl;
 
     /* FUNCTIONS IN STRINGS*/
@@ -71,7 +71,7 @@ int main()
 
     string ints = "177013";
 
-    //string to int
+    // string to int
 
     int x = stoi(ints);
 

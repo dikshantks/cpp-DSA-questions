@@ -174,6 +174,117 @@ bool floyd_detect(node *&head)
     return is_cycle;
 }
 
+int length_of_LL(node *head)
+{
+    node *temp = head;
+    int count = 0;
+
+    if (head == NULL)
+    {
+
+        return count;
+    }
+
+    while (temp != NULL)
+    {
+
+        temp = temp->nextptr;
+        count++;
+    }
+
+    return count;
+}
+node *append_LASTk(node *&head, int k)
+{
+
+    node *temp = head;
+    node *tail;
+    node *newhead;
+    int count = 1;
+    int l = length_of_LL(head);
+    k = k % l;
+    while (temp->nextptr != NULL)
+    {
+
+        if (count == l - k)
+        {
+            tail = temp;
+            newhead = temp->nextptr;
+        }
+
+        temp = temp->nextptr;
+        count++;
+    }
+
+    tail->nextptr = NULL;
+    temp->nextptr = head;
+
+    return newhead;
+}
+
+node *merge(node *&head1, node *&head2)
+{
+    node *p1 = head1;
+    node *p2 = head2;
+    node *dummynode = new node(-1);
+
+    node *p3 = dummynode;
+
+    while (p1 != NULL && p2 != NULL)
+    {
+        if (p1->data < p2->data)
+        {
+            p3->nextptr = p1;
+            p1 = p1->nextptr;
+        }
+        else
+        {
+            p3->nextptr = p2;
+            p2 = p2->nextptr;
+        }
+        p3 = p3->nextptr;
+    }
+    while (p1 != NULL)
+    {
+        p3->nextptr = p1;
+        p1 = p1->nextptr;
+        p3 = p3->nextptr;
+    }
+    while (p2 != NULL)
+    {
+        p3->nextptr = p2;
+        p2 = p2->nextptr;
+        p3 = p3->nextptr;
+    }
+
+    return dummynode->nextptr;
+}
+
+void evenafter_odd(node *&head)
+{
+    node *odd = head;
+
+    node *even = head->nextptr;
+
+    node *evenstart = even;
+
+    while (odd->nextptr != NULL && even->nextptr != NULL)
+    {
+        odd->nextptr = even->nextptr;
+        odd = odd->nextptr;
+        even->nextptr = odd->nextptr;
+        even = even->nextptr;
+    }
+
+    odd->nextptr = evenstart;
+
+    if (odd->nextptr != NULL)
+    {
+
+        even->nextptr = NULL;
+        /* code */
+    }
+}
 int main()
 {
 
@@ -193,9 +304,33 @@ int main()
     insert_attail(head, 4);
     display(head);
 
-    make_cylce(head, 3);
+    // make_cylce(head, 3);
 
-    cout << floyd_detect(head);
+    // cout << floyd_detect(head) << endl;
 
+    node *append_head = append_LASTk(head, 2);
+
+    display(append_head);
+
+    node *head1 = NULL;
+
+    node *head2 = NULL;
+
+    int arr1[] = {1, 6, 8, 9};
+    int arr2[] = {2, 5, 6, 8, 10};
+    for (int i = 0; i < 4; i++)
+    {
+        insert_attail(head1, arr1[i]);
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        insert_attail(head2, arr2[i]);
+    }
+
+    display(head1);
+    display(head2);
+
+    node *merge_head = merge(head1, head2);
+    display(merge_head);
     return 0;
 }
