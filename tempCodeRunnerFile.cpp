@@ -1,2 +1,4 @@
-#include <iostream>
-#include <string>
+if (root == NULL)
+    {
+        return 1;
+    }
