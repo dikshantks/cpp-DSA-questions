@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "utility": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "editor.defaultFormatter": "ms-vscode.cpptools"

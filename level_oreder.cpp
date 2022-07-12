@@ -178,9 +178,78 @@ int optimize_diameter(Node *root, int *height)
     int rdiameter = optimize_diameter(root->right, &rh);
     int currdiameter = lh + rh + 1;
 
-    return 0;
+    *height = max(lh, rh) + 1;
+
+    return max(currdiameter, max(ldiameter, rdiameter));
 }
-///////////////////////////////////////////////
+//////////////////////////////////////////////tf
+
+////////// BAL;A;NCED HEGIHT TREE : ABSOLUTE DIFFRENCE B/W HEIGHT OF LEFT AND RIGHT SUBTREE LESS THAN ONE
+// / MODULAS OF  NO OF (LEFT SUBTREE - RIGHT SUBTREE)
+
+bool isBalanced(Node *root)
+{
+    if (root == NULL)
+    {
+        return true;
+    }
+
+    if (isBalanced(root->left) == false)
+    {
+        return false;
+    }
+    if (isBalanced(root->right))
+    {
+        return false;
+    }
+
+    int lh = clachieght(root->left);
+    int rh = clachieght(root->right);
+
+    if (abs(lh - rh) <= 1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void right_view(Node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        int n = q.size();
+
+        for (int i = 0; i < n; i++)
+        {
+            Node *curr = q.front();
+            q.pop();
+
+            if (i == n - 1)
+            {
+                cout << curr->data << "-> ";
+            }
+            if (curr->left)
+            {
+                q.push(curr->left);
+            }
+            if (curr->right)
+            {
+                q.push(curr->right);
+            }
+        }
+    }
+}
 
 int main()
 {
@@ -191,10 +260,21 @@ int main()
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
-    // root->right->right->left = new Node(8);
     cout << sumATk(root, 0) << endl;
     cout << clachieght(root) << endl;
-    cout << calcdiameter(root) << endl;
+
+    int height = 0;
+
+    cout << optimize_diameter(root, &height) << endl;
+
+    if (isBalanced(root))
+    {
+        cout << " balanced";
+    }
+    else
+    {
+        cout << " not balanced   " << endl;
+    }
 
     return 0;
 }

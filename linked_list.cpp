@@ -79,16 +79,16 @@ node *reverse(node *&head)
 
     node *prevptr = NULL;
     node *currentptr = head;
-    node *nextptr;
+    node *nextone;
 
     while (currentptr != NULL)
     {
-        nextptr = currentptr->nextptr;
+        nextone = currentptr->nextptr;
 
         currentptr->nextptr = prevptr;
 
         prevptr = currentptr;
-        currentptr = nextptr;
+        currentptr = nextone;
     }
 
     return prevptr;
