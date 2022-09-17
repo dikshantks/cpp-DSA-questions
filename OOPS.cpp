@@ -110,6 +110,9 @@ public:
 class C : public B
 {
 public:
+    void funcC()
+    {
+    }
 };
 
 class apnacollege
