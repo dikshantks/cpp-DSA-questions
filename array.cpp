@@ -2,49 +2,47 @@
 #include <climits>
 using namespace std;
 
-class onedarray
-{
-private:
-    int n;
+// class onedarray
+// {
+// private:
+//     int n;
 
-public:
-    onedarray() {}
-    onedarray(int n)
-    {
-        this->n = n;
-    }
-    int setit(int m)
-    {
-    }
-};
+// public:
+//     onedarray() {}
+//     onedarray(int n)
+//     {
+//         this->n = n;
+//     }
+//     int setit(int m)
+//     {
+//     }
+// };
 
 int main()
 {
     cout << "***************1D ARRAY ******************" << endl;
-    // 1D array
     /*
-     int n;
-     cout<< max(34,56);
+    int n;
+    cout << max(34, 56);
 
-     cout<<"enter lengh:"<<endl;
-     cin>>n;
+    cout << "enter lengh:" << endl;
+    cin >> n;
 
-     int array[n];
+    int array[n];
 
-     for (int i = 0; i < n ; i++)
-     {
-         cin>> array[i];
-     }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> array[i];
+    }
 
-      for (int i = 0; i < n ; i++)
-     {
-         cout<< array[i]<<" ";
-     }*/
+    for (int i = 0; i < n; i++)
+    {
+        cout << array[i] << " ";
+    }
+     */
 
+    cout << "**************2D ARRAY ***************" << endl;
     // 2D array
-
-    // cout << "**************2D ARRAY ***************" << endl;
-    // // input
     // int n, m;
     // cout << "enter the order of matrix [i][j]\n";
     // cin >> n >> m;
@@ -70,36 +68,32 @@ int main()
     //     cout << endl;
     // }
 
-    // /*
-    // //searching in array
-    // cout<<"enter the value : ";
+    // // searching in array
+    // cout << "enter the value : ";
     // int val;
-    // cin>>val;
+    // cin >> val;
 
-    // bool flag=false;
+    // bool flag = false;
 
-    // for (int i = 0; i < n ; i++)
+    // for (int i = 0; i < n; i++)
     // {
-    //     for (int j = 0; j < m ; j++)
+    //     for (int j = 0; j < m; j++)
     //     {
-    //         if (arr[i][j]==val)
+    //         if (arr[i][j] == val)
     //         {
-    //             flag=true;
+    //             flag = true;
     //         }
-
     //     }
-
     // }
 
-    // if (flag==true)
+    // if (flag == true)
     // {
-    //     cout<<"element found";
+    //     cout << "element found";
     // }
     // else
     // {
-    //     cout<<"element not found";
+    //     cout << "element not found";
     // }
-    // */
 
     // // spiral order print
     // cout << endl;
@@ -143,7 +137,7 @@ int main()
     //     column_start++;
     // }
 
-    // // matrix transpose
+    // // // matrix transpose
     // cout << endl
     //      << "\n";
     // cout << "******************\n";
@@ -168,97 +162,95 @@ int main()
     //     cout << endl;
     // }
 
-    // // matrix multiplication
-    // cout << "*************************\n";
-    // int a1[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    // int a2[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {4, 5, 6, 7}};
+    // // matrix multiplication////////////////////////////////\\\\\\\\\\\\\\\\\/
+    cout << "*************************\n";
+    int a1[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int a2[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {4, 5, 6, 7}};
 
-    // int ans[3][3];
+    int ans[3][3];
 
-    // int sum;
+    int sum;
 
-    // cout << "matrix multiplication \n";
-    // cout << endl;
-    // cout << "matrix 1 :" << endl;
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     for (int j = 0; j < 3; j++)
-    //     {
-    //         cout << a1[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
-    // cout << "matrix 2 :" << endl;
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     for (int j = 0; j < 4; j++)
-    //     {
-    //         cout << a2[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    cout << "matrix multiplication \n";
+    cout << endl;
+    cout << "matrix 1 :" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << a1[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << "matrix 2 :" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            cout << a2[i][j] << " ";
+        }
+        cout << endl;
+    }
 
-    // cout << "multiplication :" << endl;
+    cout << "multiplication :" << endl;
 
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     for (int j = 0; j < 4; j++)
-    //     {
-    //         ans[i][j] = 0;
-    //     }
-    // }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            ans[i][j] = 0;
+        }
+    }
 
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     for (int j = 0; j < 4; j++)
-    //     {
-    //         for (int k = 0; k < 3; k++)
-    //         {
-    //             ans[i][j] += a1[i][k] * a2[k][j];
-    //         }
-    //     }
-    // }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            for (int k = 0; k < 3; k++)
+            {
+                ans[i][j] += a1[i][k] * a2[k][j];
+            }
+        }
+    }
 
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     for (int j = 0; j < 4; j++)
-    //     {
-    //         cout << ans[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            cout << ans[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     // // matrix search (matrix in ascending order)
-    // cout << "*********************matrix search ***********" << endl;
-    // cout << "matrix" << endl;
+    cout << "*********************matrix search ***********" << endl;
+    cout << "matrix" << endl;
 
-    // int asc[4][4] = {{1, 4, 7, 11}, {2, 5, 8, 12}, {3, 6, 9, 16}, {10, 13, 14, 17}};
+    int asc[4][4] = {{1, 4, 7, 11}, {2, 5, 8, 12}, {3, 6, 9, 16}, {10, 13, 14, 17}};
 
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     for (int j = 0; j < 4; j++)
-    //     {
-    //         cout << asc[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            cout << asc[i][j] << " ";
+        }
+        cout << endl;
+    }
 
-    // int element;
-    // cout << "emter the element to find : ";
-    // cin >> element;
-    // /*
-    //     for (int i = 0; i < 4; i++)
-    //     {
-    //         for (int j = 0; j < 4; j++)
-    //         {
-    //             if (asc[i][j]== element)
-    //             {
-    //                 cout<<"element found "<<endl;
-    //             }
+    int element;
+    cout << "emter the element to find : ";
+    cin >> element;
 
-    //         }
-
-    //     }*/
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (asc[i][j] == element)
+            {
+                cout << "element found " << endl;
+            }
+        }
+    }
 
     return 0;
 }

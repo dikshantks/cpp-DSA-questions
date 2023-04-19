@@ -46,6 +46,8 @@ void one_D()
     // Assign address of val[0] to ptr.
     // We can use ptr=&val[0];(both are same)
     ptr = val;
+
+    cout << val << endl;
     cout << "Elements of the array are: ";
     cout << ptr[0] << " " << ptr[1] << " " << ptr[2] << endl;
 

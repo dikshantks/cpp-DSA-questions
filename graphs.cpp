@@ -7,7 +7,7 @@ const int N = 1000;
 
 bool vis[N];
 
-vector<int> adj[N];
+vector<int> adj[N]; 
 
 int main()
 {
@@ -24,9 +24,8 @@ int main()
     {
         cin >> x >> y;
 
-        adj[x].push_back(y)
-            adj[y]
-                .push_back(x);
+        adj[x].push_back(y);
+        adj[y].push_back(x);
     }
 
     queue<int> q;
