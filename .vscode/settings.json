@@ -4,8 +4,9 @@
         "algorithm": "cpp",
         "utility": "cpp",
         "ostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "unordered_set": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
     "editor.defaultFormatter": "ms-vscode.cpptools"
 }
